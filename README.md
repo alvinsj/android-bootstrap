@@ -1,9 +1,10 @@
-# android-bootstrap
-android-bootstrap is an Android Library Project to kick start Android App Development.
+## android-bootstrap
+<b>android-bootstrap</b> is an Android Library Project to kick start Android App Development.
  
-## Getting Started
-1. Initialize your app with AppManager with AppConfig configuration:
-<code>
+### Getting Started
+Initialize AppManager and with AppConfig configuration:  
+
+```
 public AppManager manager() {
   try { return AppManager.getInstance(); } 
   catch(Exception e) { return AppManager.bootstrap(getApplicationContext(), setupConfig()); }
@@ -16,8 +17,9 @@ private AppConfig setupConfig() {
 		public String defaultCacheDBName(Context context){ //return.. }
   }
 }
-</code>
-2. Features
+```
+
+## Features
 - preferences()
 <code>AppPreference pref = manager().preferences(); pref.set("[key]", "[value]");</code>
 - logger()
