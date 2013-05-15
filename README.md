@@ -19,10 +19,20 @@ private AppConfig setupConfig() {
 }
 ```
 
-## Features
+### Features
 - preferences()
 <code>AppPreference pref = manager().preferences(); pref.set("[key]", "[value]");</code>
 - logger()
 <code>AppLogger logger = manager().logger(); logger.log("[where]", "[debug message]");</code>
 - cacheStore()
 <code>CacheStore store = manager().cacheStore(); store.put("[type]", "[key]", "[value]");</code>
+
+### View builder
+- QuickUI
+<code>QuickUI.toast(context, "downloading"); QuickUI.button(context, "Download", "#ffffff", "#000000");</code>
+- LayoutManager
+<code>layout = ViewLayout(rootView); layout.addTop(downloadButton); layout.addCenterHorizontallyBetween(button, leftButton, rightButton); </code>
+
+### Related Projects
+- [android-cache](http://github.com/alvinsj/android-cache)
+- [android-apirequest](http://github.com/alvinsj/android-apirequest)
