@@ -24,7 +24,7 @@
  * IN CONNECTION WITH THE SOFTWARE OR 
  * THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  * 
- * @author 		Alvin S.J. Ng <alvinsj.ng@gmail.com>
+ * @author 		Alvin S.J. Ng <email.to.alvin@gmail.com>
  * @copyright	2013	Alvin S.J. Ng
  * 
  */
@@ -52,15 +52,10 @@ public class AppManager {
     	mCacheStore = setupCacheStore(applicationContext);
     }
     
-    public static AppManager getInstance() throws Exception {
-    	if( singleton == null || mConfig == null )
-    		throw new Exception("AppManager bootstrap() is not called");
+    public static AppManager getInstance(Context applicationContext, AppConfig config) {
+    	if( singleton == null )
+        	singleton = new AppManager(applicationContext, config);
         return singleton;
-    }
-    
-    public static AppManager boostrap(Context applicationContext, AppConfig config) {
-    	singleton = new AppManager(applicationContext, config);
-    	return singleton;
     }
     
     public AppPreference preferences(Context context){
